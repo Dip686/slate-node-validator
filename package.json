@@ -1,0 +1,30 @@
+{
+  "name": "slate-node-validator",
+  "version": "1.0.0",
+  "description": "A package for validating slate objects",
+  "main": "dist/bundle-es.js",
+  "module": "dist/bundle-cjs.js",
+  "scripts": {
+    "build": "rm -rf dist && webpack --config webpack.config.js",
+    "prepublishOnly": "npm run build"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-loader": "^8.2.2",
+    "slate": "^0.103.0",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "author": "Dip686",
+  "license": "MIT",
+  "peerDependencies": {
+    "slate": ">=0.75.0"
+  }
+}
