@@ -28,8 +28,21 @@ const slateObject = [
 const validationResult = validateSlateObject(slateObject);
 
 if (!validationResult.isValid) {
-  console.error(validationResult.error);
-  // Handle validation error
+  // Log error to server with details like error, path, node type, etc.
+  // Show user-friendly message to the user
+  /**
+   * sample output of validationResult
+   * In case valid
+   * { isValid: true }
+   * In case of invalid
+    {
+      isValid: false
+      error: // Detailed error log
+      userFriendlyMessage: // error message in layman language
+      nodeType: current node type eg. link, code block etc.'
+      path: relative path w.r.t. root
+    }
+  */
 }
 ```
 ## License
