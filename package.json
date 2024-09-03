@@ -1,6 +1,6 @@
 {
   "name": "slate-node-validator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A package for validating slate objects",
   "module": "dist/bundle-es.js",
   "main": "dist/bundle-cjs.js",
