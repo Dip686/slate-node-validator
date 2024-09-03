@@ -169,15 +169,6 @@ function validateSlateObject (slateObject) {
               path
             };
           }
-          if (node.children.length !== 1 || !validateNode(node.children[0], [...path, 'img']).isValid) {
-            return {
-              isValid: false,
-              error: `Image (img) at path ${path.join(' > ')} has invalid children.`,
-              userFriendlyMessage: 'There is an issue with the image content. Please check the image and try again.',
-              nodeType: node.type,
-              path
-            };
-          }
           break;
 
         case 'a':
