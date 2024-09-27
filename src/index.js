@@ -107,24 +107,6 @@ function validateSlateObject (slateObject) {
           }
           break;
 
-        case 'li':
-          for (let i = 0; i < node.children.length; i++) {
-            const childType = node.children[i].type;
-            if (!['lic', 'ul', 'ol'].includes(childType)) {
-              return {
-                isValid: false,
-                errorKey: `${node.type}_${INVALID_CONTENT}`,
-                error: `List item (li) at path ${path.join(' > ')} has an invalid child type '${childType}' (expected 'lic', 'ul', or 'ol').`,
-                userFriendlyMessage: 'There is an issue with the list item. Please ensure it contains valid content.',
-                nodeType: node.type,
-                path: [...path, `li[${i}]`]
-              };
-            }
-            const result = validateNode(node.children[i], [...path, `li[${i}]`]);
-            if (!result.isValid) return result;
-          }
-          break;
-
         case 'lic':
           for (let i = 0; i < node.children.length; i++) {
             const result = validateNode(node.children[i], [...path, `lic[${i}]`]);
