@@ -7,9 +7,12 @@ module.exports = [
     output: {
       path: path.resolve(__dirname, 'dist'), // Output directory
       filename: 'bundle-es.js', // Output file name for ES6
-      libraryTarget: 'amd'
+      libraryTarget: 'module'
     },
     mode: 'production',
+    experiments: {
+      outputModule: true, // Required for 'module' libraryTarget
+    },
     optimization: {
       minimizer: [new TerserPlugin({
         extractComments: false,
